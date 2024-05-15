@@ -1,0 +1,8 @@
+<button
+  type="button"
+  class="btn"
+  [class.active]="active()"
+  (click)="action.emit($event)"
+>
+  <ng-content></ng-content>
+</button>

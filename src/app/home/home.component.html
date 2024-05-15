@@ -1,0 +1,15 @@
+<h1>Les chats de mon quartier</h1>
+
+<div class="tabs">
+  @for (cat of cats; track cat.name) {
+  <fc-cta (action)="select(cat.name)" [active]="selectedCat === cat.name">
+    {{ cat.name }}
+  </fc-cta>
+  }
+</div>
+
+<div class="container-card">
+  @for (cat of cats; track cat.name) {
+  <fc-card [cat]="cat" [hidden]="selectedCat !== cat.name"></fc-card>
+  }
+</div>
