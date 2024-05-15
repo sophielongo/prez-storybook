@@ -8,5 +8,6 @@ import { Component, input, output } from '@angular/core';
 })
 export class CTAComponent {
   public active = input(false);
+  public size: 'small' | 'regular' | 'large' = 'regular';
   protected action = output<MouseEvent>();
 }

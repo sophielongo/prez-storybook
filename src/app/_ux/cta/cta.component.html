@@ -2,6 +2,8 @@
   type="button"
   class="btn"
   [class.active]="active()"
+  [class.small]="size === 'small'"
+  [class.large]="size === 'large'"
   (click)="action.emit($event)"
 >
   <ng-content></ng-content>

@@ -22,4 +22,12 @@
     color: white;
     border-color: #ce6a6b;
   }
+  &.large {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+  }
+  &.small {
+    font-size: 0.5rem;
+    padding: 0.25rem 0.75rem;
+  }
 }
