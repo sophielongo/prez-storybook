@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, InputSignal, input, output } from '@angular/core';
 
 @Component({
   selector: 'fc-cta',
@@ -8,6 +8,6 @@ import { Component, input, output } from '@angular/core';
 })
 export class CTAComponent {
   public active = input(false);
-  public size: 'small' | 'regular' | 'large' = 'regular';
+  public size = input<'small' | 'regular' | 'large'>('regular');
   protected action = output<MouseEvent>();
 }

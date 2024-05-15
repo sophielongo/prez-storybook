@@ -333,7 +333,7 @@
         },
         {
             "name": "CTAComponent",
-            "id": "component-CTAComponent-4fe952504592bb75848ddfb1be5568bf52c1a2edec7f8b9e5963430c351e5ed8676ccc2376c075848219765d02ff0b44ea609fba6a74807b78316b3fe5491934",
+            "id": "component-CTAComponent-e7eb82faceefd8528cc265467601f7bed4500453a8c36e7186a7e3c32567e1e399255ed8f365da71c8ffff03925cf11654e60ed38fc09c4bbb23c814fbaef310",
             "file": "src/app/_ux/cta/cta.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -374,7 +374,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 12,
                     "modifierKind": [
                         124
                     ],
@@ -389,7 +389,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 12,
                     "modifierKind": [
                         124
                     ],
@@ -408,6 +408,19 @@
                         125
                     ],
                     "required": false
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "input<'small' | 'regular' | 'large'>('regular')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        125
+                    ]
                 }
             ],
             "methodsClass": [],
@@ -420,17 +433,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, input, output } from '@angular/core';\n\n@Component({\n  selector: 'fc-cta',\n  standalone: true,\n  templateUrl: 'cta.component.html',\n  styleUrls: ['./cta.component.scss'],\n})\nexport class CTAComponent {\n  public active = input(false);\n  protected action = output<MouseEvent>();\n}\n",
+            "sourceCode": "import { Component, InputSignal, input, output } from '@angular/core';\n\n@Component({\n  selector: 'fc-cta',\n  standalone: true,\n  templateUrl: 'cta.component.html',\n  styleUrls: ['./cta.component.scss'],\n})\nexport class CTAComponent {\n  public active = input(false);\n  public size = input<'small' | 'regular' | 'large'>('regular');\n  protected action = output<MouseEvent>();\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// #CE6A6B\n// #EBACA2\n// #BED3C3\n// #4A919E\n// #212E53\n\n.btn {\n  padding: 0.5rem 1rem;\n  border-radius: 10px;\n  background: #cacaca;\n  border: 1px solid #cacaca;\n  cursor: pointer;\n  transition: all 250ms linear;\n  &:hover {\n    background-color: #ca9596;\n    border-color: #ca9596;\n    color: white;\n  }\n  &.active {\n    background-color: #ce6a6b;\n    border-color: #ce6a6b;\n    color: white;\n    border-color: #ce6a6b;\n  }\n}\n",
+                    "data": "// #CE6A6B\n// #EBACA2\n// #BED3C3\n// #4A919E\n// #212E53\n\n.btn {\n  padding: 0.5rem 1rem;\n  border-radius: 10px;\n  background: #cacaca;\n  border: 1px solid #cacaca;\n  cursor: pointer;\n  transition: all 250ms linear;\n  &:hover {\n    background-color: #ca9596;\n    border-color: #ca9596;\n    color: white;\n  }\n  &.active {\n    background-color: #ce6a6b;\n    border-color: #ce6a6b;\n    color: white;\n    border-color: #ce6a6b;\n  }\n  &.large {\n    font-size: 1.5rem;\n    padding: 1rem 1.5rem;\n  }\n  &.small {\n    font-size: 0.5rem;\n    padding: 0.25rem 0.75rem;\n  }\n}\n",
                     "styleUrl": "./cta.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<button\n  type=\"button\"\n  class=\"btn\"\n  [class.active]=\"active()\"\n  (click)=\"action.emit($event)\"\n>\n  <ng-content></ng-content>\n</button>\n"
+            "templateData": "<button\n  type=\"button\"\n  class=\"btn\"\n  [class.active]=\"active()\"\n  [class.small]=\"size() === 'small'\"\n  [class.large]=\"size() === 'large'\"\n  (click)=\"action.emit($event)\"\n>\n  <ng-content></ng-content>\n</button>\n"
         },
         {
             "name": "HeaderComponent",
@@ -788,7 +801,7 @@
                 "linktype": "component",
                 "name": "CTAComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
