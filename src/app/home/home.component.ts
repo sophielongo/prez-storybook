@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CTAComponent } from '../_ux/cta/cta.component';
 import { Cat } from '../_model/cat';
 import { CardComponent } from '../_ux/card/card.component';
+import { TotoComponent } from '../_ux/toto/toto.component';
 
 @Component({
   selector: 'fc-home',
   standalone: true,
   templateUrl: 'home.component.html',
-  imports: [CTAComponent, CardComponent],
+  imports: [CTAComponent, CardComponent, TotoComponent],
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {

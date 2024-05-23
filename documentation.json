@@ -333,7 +333,7 @@
         },
         {
             "name": "CTAComponent",
-            "id": "component-CTAComponent-4fe952504592bb75848ddfb1be5568bf52c1a2edec7f8b9e5963430c351e5ed8676ccc2376c075848219765d02ff0b44ea609fba6a74807b78316b3fe5491934",
+            "id": "component-CTAComponent-c174520efffee3e85fe034874901686a902a86d690c77e4e929586089eb708e93a78ecd445feeeafcf19ed7c5989ed2a786c369e2aee9f0d443d68e04b8a53b5",
             "file": "src/app/_ux/cta/cta.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -374,7 +374,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 12,
                     "modifierKind": [
                         124
                     ],
@@ -389,7 +389,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 12,
                     "modifierKind": [
                         124
                     ],
@@ -408,6 +408,19 @@
                         125
                     ],
                     "required": false
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'regular'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"small\" | \"regular\" | \"large\"",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        125
+                    ]
                 }
             ],
             "methodsClass": [],
@@ -420,17 +433,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, input, output } from '@angular/core';\n\n@Component({\n  selector: 'fc-cta',\n  standalone: true,\n  templateUrl: 'cta.component.html',\n  styleUrls: ['./cta.component.scss'],\n})\nexport class CTAComponent {\n  public active = input(false);\n  protected action = output<MouseEvent>();\n}\n",
+            "sourceCode": "import { Component, input, output } from '@angular/core';\n\n@Component({\n  selector: 'fc-cta',\n  standalone: true,\n  templateUrl: 'cta.component.html',\n  styleUrls: ['./cta.component.scss'],\n})\nexport class CTAComponent {\n  public active = input(false);\n  public size: 'small' | 'regular' | 'large' = 'regular';\n  protected action = output<MouseEvent>();\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "// #CE6A6B\n// #EBACA2\n// #BED3C3\n// #4A919E\n// #212E53\n\n.btn {\n  padding: 0.5rem 1rem;\n  border-radius: 10px;\n  background: #cacaca;\n  border: 1px solid #cacaca;\n  cursor: pointer;\n  transition: all 250ms linear;\n  &:hover {\n    background-color: #ca9596;\n    border-color: #ca9596;\n    color: white;\n  }\n  &.active {\n    background-color: #ce6a6b;\n    border-color: #ce6a6b;\n    color: white;\n    border-color: #ce6a6b;\n  }\n}\n",
+                    "data": "// #CE6A6B\n// #EBACA2\n// #BED3C3\n// #4A919E\n// #212E53\n\n.btn {\n  padding: 0.5rem 1rem;\n  border-radius: 10px;\n  background: #cacaca;\n  border: 1px solid #cacaca;\n  cursor: pointer;\n  transition: all 250ms linear;\n  &:hover {\n    background-color: #ca9596;\n    border-color: #ca9596;\n    color: white;\n  }\n  &.active {\n    background-color: #ce6a6b;\n    border-color: #ce6a6b;\n    color: white;\n    border-color: #ce6a6b;\n  }\n  &.large {\n    font-size: 1.5rem;\n    padding: 1rem 1.5rem;\n  }\n  &.small {\n    font-size: 0.5rem;\n    padding: 0.25rem 0.75rem;\n  }\n}\n",
                     "styleUrl": "./cta.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<button\n  type=\"button\"\n  class=\"btn\"\n  [class.active]=\"active()\"\n  (click)=\"action.emit($event)\"\n>\n  <ng-content></ng-content>\n</button>\n"
+            "templateData": "<button\n  type=\"button\"\n  class=\"btn\"\n  [class.active]=\"active()\"\n  [class.small]=\"size === 'small'\"\n  [class.large]=\"size === 'large'\"\n  (click)=\"action.emit($event)\"\n>\n  <ng-content></ng-content>\n</button>\n"
         },
         {
             "name": "HeaderComponent",
@@ -520,7 +533,7 @@
         },
         {
             "name": "HomeComponent",
-            "id": "component-HomeComponent-6c20488384bc39c9d1394127174669b1a40ecc1f10fb5efa43c2b15073a6795370d431bd01a82cd3b9eb1671aebae023b8386cf50106091c447e8e06b4d250bd",
+            "id": "component-HomeComponent-7903a21dfb04354cdbc3ea0a8c18d479b5bdf4e57f6e73146a06001af164039a3f5d2e2d92c299d487270569529fb12bebf352eaf15fba3d3ff91bc6503a3bf2",
             "file": "src/app/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -548,7 +561,7 @@
                     "type": "Cat[]",
                     "optional": false,
                     "description": "",
-                    "line": 14,
+                    "line": 15,
                     "modifierKind": [
                         124
                     ]
@@ -561,7 +574,7 @@
                     "type": "string | null",
                     "optional": false,
                     "description": "",
-                    "line": 31,
+                    "line": 32,
                     "modifierKind": [
                         124
                     ]
@@ -581,7 +594,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 34,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -613,12 +626,16 @@
                 {
                     "name": "CardComponent",
                     "type": "component"
+                },
+                {
+                    "name": "TotoComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { CTAComponent } from '../_ux/cta/cta.component';\nimport { Cat } from '../_model/cat';\nimport { CardComponent } from '../_ux/card/card.component';\n\n@Component({\n  selector: 'fc-home',\n  standalone: true,\n  templateUrl: 'home.component.html',\n  imports: [CTAComponent, CardComponent],\n  styleUrls: ['./home.component.scss'],\n})\nexport class HomeComponent {\n  protected cats: Cat[] = [\n    {\n      name: 'Mathieu',\n      img: 'https://cdn.pixabay.com/photo/2024/02/17/00/18/cat-8578562_1280.jpg',\n      nickname: 'Le doyen',\n    },\n    {\n      name: 'Esmeralda',\n      img: 'https://cdn.pixabay.com/photo/2022/04/03/17/48/animal-7109566_960_720.jpg',\n      nickname: 'La rebelle',\n    },\n    {\n      name: 'Pierrot',\n      img: 'https://cdn.pixabay.com/photo/2017/08/21/19/52/cat-2666597_960_720.jpg',\n      nickname: 'le gros chat roux',\n    },\n  ];\n  protected selectedCat: string | null = 'Mathieu';\n\n  protected select(name: string) {\n    this.selectedCat = name;\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { CTAComponent } from '../_ux/cta/cta.component';\nimport { Cat } from '../_model/cat';\nimport { CardComponent } from '../_ux/card/card.component';\nimport { TotoComponent } from '../_ux/toto/toto.component';\n\n@Component({\n  selector: 'fc-home',\n  standalone: true,\n  templateUrl: 'home.component.html',\n  imports: [CTAComponent, CardComponent, TotoComponent],\n  styleUrls: ['./home.component.scss'],\n})\nexport class HomeComponent {\n  protected cats: Cat[] = [\n    {\n      name: 'Mathieu',\n      img: 'https://cdn.pixabay.com/photo/2024/02/17/00/18/cat-8578562_1280.jpg',\n      nickname: 'Le doyen',\n    },\n    {\n      name: 'Esmeralda',\n      img: 'https://cdn.pixabay.com/photo/2022/04/03/17/48/animal-7109566_960_720.jpg',\n      nickname: 'La rebelle',\n    },\n    {\n      name: 'Pierrot',\n      img: 'https://cdn.pixabay.com/photo/2017/08/21/19/52/cat-2666597_960_720.jpg',\n      nickname: 'le gros chat roux',\n    },\n  ];\n  protected selectedCat: string | null = 'Mathieu';\n\n  protected select(name: string) {\n    this.selectedCat = name;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -628,7 +645,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<h1>Les chats de mon quartier</h1>\n\n<div class=\"tabs\">\n  @for (cat of cats; track cat.name) {\n  <fc-cta (action)=\"select(cat.name)\" [active]=\"selectedCat === cat.name\">\n    {{ cat.name }}\n  </fc-cta>\n  }\n</div>\n\n<div class=\"container-card\">\n  @for (cat of cats; track cat.name) {\n  <fc-card [cat]=\"cat\" [hidden]=\"selectedCat !== cat.name\"></fc-card>\n  }\n</div>\n"
+            "templateData": "<h1>Les chats de mon quartier</h1>\n\n<app-toto [text]=\"'mon texte'\"></app-toto>\n<div class=\"tabs\">\n  @for (cat of cats; track cat.name) {\n    <fc-cta (action)=\"select(cat.name)\" [active]=\"selectedCat === cat.name\">\n      {{ cat.name }}\n    </fc-cta>\n  }\n</div>\n\n<div class=\"container-card\">\n  @for (cat of cats; track cat.name) {\n    <fc-card [cat]=\"cat\" [hidden]=\"selectedCat !== cat.name\"></fc-card>\n  }\n</div>\n"
         },
         {
             "name": "PageComponent",
@@ -722,6 +739,71 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "TotoComponent",
+            "id": "component-TotoComponent-26efde6099aaa8066c2fb87281bb5fa9fa019007316909efe453d0b5d6e0e00bea8184b21c44e56a3dea6e12344b00c254fcea20e3485ede510ffb3310687b3a",
+            "file": "src/app/_ux/toto/toto.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-toto",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "toto.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "modifierKind": [
+                        125
+                    ],
+                    "required": true
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "modifierKind": [
+                        125
+                    ],
+                    "required": true
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input } from '@angular/core';\n\n@Component({\n  standalone: true,\n  selector: 'app-toto',\n  templateUrl: 'toto.component.html',\n})\nexport class TotoComponent {\n  public text = input.required<string>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>Coucou c'est mon code !</p>\n<p>{{ text() }}</p>\n"
         }
     ],
     "modules": [],
@@ -761,7 +843,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 8,
+        "count": 7,
         "status": "low",
         "files": [
             {
@@ -788,7 +870,16 @@
                 "linktype": "component",
                 "name": "CTAComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/_ux/toto/toto.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TotoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
